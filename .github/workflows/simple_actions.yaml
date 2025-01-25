@@ -1,9 +1,7 @@
 name: Print Variables
 
 on: 
-  push:
-    branches:
-      - main
+  push
 
 jobs:
   print_variables:
