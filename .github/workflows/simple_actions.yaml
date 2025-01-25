@@ -1,0 +1,24 @@
+name: Print Variables
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  print_variables:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set some variables
+        run: |
+          echo "MY_VARIABLE=Hello, GitHub Actions!" >> $GITHUB_ENV
+          echo "ANOTHER_VAR=This is another variable." >> $GITHUB_ENV
+
+      - name: Print variables
+        run: |
+          echo "MY_VARIABLE: $MY_VARIABLE"
+          echo "ANOTHER_VAR: $ANOTHER_VAR"
